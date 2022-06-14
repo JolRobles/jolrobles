@@ -55,8 +55,8 @@ https://templatemo.com/tm-558-klassy-cafe
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <img src="{% static 'images/logo.gif' %}" align="klassy cafe html template">
+                        <a href="{% url 'home:index' %}" class="logo">
+                            <img src="{% static 'images/logo123.gif' %}" align="klassy cafe html template">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -87,6 +87,7 @@ https://templatemo.com/tm-558-klassy-cafe
                             </li> -->
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contactos</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home:list_blog' %}">Blog</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

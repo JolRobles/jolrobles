@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -82,8 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'jolrobles',
         'USER': 'postgres',
-        # 'PASSWORD': 'daxh', #dax
-        'PASSWORD': 'admin123', #yorch
+        'PASSWORD': 'root', #yorch
         'HOST': 'localhost',
         'PORT': 5432,
     }
