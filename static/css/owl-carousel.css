@@ -70,7 +70,7 @@
     padding: 0 !important;
     font: inherit; }
   .owl-carousel.owl-loaded {
-    display: block; }
+    display: initial; }
   .owl-carousel.owl-loading {
     opacity: 0;
     display: block; }
@@ -123,7 +123,7 @@
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
-  transition: height 500ms ease-in-out; }
+  transition: height 600ms ease-in-out; }
 
 /*
  * 	Owl Carousel - Lazy Load Plugin
