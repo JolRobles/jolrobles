@@ -208,7 +208,8 @@ header
 */
 
 .background-header {
-  background-color: #fff;
+  background-color: #fff !important;
+  /* opacity: 0.4; */
   height: 80px!important;
   position: fixed!important;
   top: 0px;
@@ -273,7 +274,7 @@ header
 
 .header-area .main-nav .nav {
   float: right;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-right: 0px;
   background-color: transparent;
   -webkit-transition: all 0.3s ease 0s;
@@ -942,8 +943,8 @@ menu
 .info {
   position: relative;
   width: 100%;
-  background-color: #9b9b9b;
-  border: 1px solid #9b9b9b;
+  background-color: #AFAFAF;
+  border: 1px solid #AFAFAF;
   transform: translateY(100%)
   translateY(120px)
   translateZ(0);
@@ -960,12 +961,12 @@ menu
   padding: 30px 30px 20px 30px;
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: black;
 }
 
 .description {
   padding: 0px 30px;
-  color: #fff;
+  color: black;
 }
 
 #menu .price h6 {

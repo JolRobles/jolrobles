@@ -1,0 +1,55 @@
+<!-- ***** Footer Start ***** -->
+{% load static %}
+<footer>
+    <div class="container" style="max-width:1440px">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="">
+              <a href="index.html"><img src="{% static 'images/logo_blanco_vertical.png' %}" alt=""  style="padding-inline-start:0px"></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-xs-12">
+              <div class="text-left">
+                <p  style="color:#fff"><b>MENÚ PRINCIPAL</b></p>
+                  <a href="{% url 'home:index' %}" style="color:#fff">INICIO </a><br>
+                  <a href="{% url 'home:proyectos' %}" style="color:#fff">PROYECTOS</a><br>
+                  <a href="{% url 'home:index' %}" style="color:#fff">BLOG</a><br>
+                  <a href="{% url 'home:index' %}" style="color:#fff">CONTACTO</a>
+              </div>
+          </div>
+            <div class="col-lg-3 col-xs-12">
+              <div class="right-text-content">
+                  <p><b>REDES SOCIALES</b></p>
+                  <ul class="social-icons">
+                      <li style="color:#fff"><a href="https://www.facebook.com/jolrobless"><i class="fa fa-facebook"></i></a> Facebook</li>
+                    </ul>
+                  <ul class="social-icons">
+                    <li style="color:#fff"><a href="https://twitter.com/jolrobles"><i class="fa fa-twitter"></i></a> Twitter</li>
+                  </ul>
+                  <ul class="social-icons">
+                    <li style="color:#fff"><a href="https://www.linkedin.com/in/jolrobles/"><i class="fa fa-linkedin"></i></a> Linkedin</li>
+                  </ul>
+                  <ul class="social-icons">
+                    <li style="color:#fff"><a href="https://www.instagram.com/jolrobles/"><i class="fa fa-instagram"></i></a> Instagram</li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-12">
+              <div class="right-text-content">
+                <p><b>CONTACTO</b></p>
+                    <ul class="social-icons">
+                      <li style="color:#fff"><a target="_blank" href="https://wa.me/593981538762/?"><i class="fa fa-whatsapp"></i></a>0981538762</li>
+                    </ul>
+                <p><b>INFORMACION</b></p>
+                <ul class="social-icons">
+                  <li style="color:#fff">Diseño: Cesar Cabrera-0981538762</li>
+                </ul>
+                <ul class="social-icons">
+                  <li style="color:#fff">Desarrollo: Jorge Robles-0981538762</li>
+                </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

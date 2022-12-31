@@ -9,7 +9,7 @@ DETALLE PROYECTO
     <div class="container-fluid pt-5 pb-3">
       <div class="container">
         <div class="text-center pb-2">
-          <h1 class="mb-4">{{blog.titulo}}</h1>
+          <h1 class="mb-4">KinetPos</h1>
         </div>
         <div class="row portfolio-container">
           <div class="col-lg-6 col-md-6 mb-4 portfolio-item first">
@@ -23,7 +23,9 @@ DETALLE PROYECTO
           </div>
           <div class="col-lg-6 col-md-6 mb-4 portfolio-item second">
             <div class="position-relative overflow-hidden mb-2">
-              <p align="right">{{blog.autor}} | {{blog.fecha}}</p>
+              <div class="portfolio-btn d-flex">
+                <h3>Descripción del proyecto</h3>
+              </div>
               <br>
               <div class="portfolio-btn d-flex justify-content-center">
                 <p style="text-align:justify">
@@ -33,20 +35,27 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
               </div>
             </div>
           </div>
-          <div class="col-lg-12 col-md-12 mb-4 portfolio-item second">
-            <div class="position-relative overflow-hidden mb-2">
-              <div style="text-align:justify">
-                <p >{{blog.detalle|linebreaks}}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12 col-md-12 mb-4 portfolio-item first">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="w-100 parent" id="parent"  src="{{blog.imagen.url}}" alt="" style="height:350px; border-radius: 20px;"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
-              </div>
+          <div class="col-lg-12 col-md-12 mb-4 portfolio-item third">
+            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">DATOS DEL PROYECTO</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="col"><b>Link del proyecto: </b>  <a href="https://www.kinetpos.com/">https://www.kinetpos.com/</a></td>
+                  </tr>
+                  <tr>
+                    <td scope="col"><b>Empresa: </b>  Kirios</td>
+                  </tr>
+                  <tr>
+                    <td scope="col"><b>Rol desempeñado: </b>  Director de Proyecto</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -55,7 +64,7 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
     <!-- Gallery End -->
         </section>
         <div class="text-center pb-2">
-          <h1 class="mb-4">Otros Blogs</h1>
+          <h1 class="mb-4">Otros Proyectos</h1>
         </div>
         <!-- ***** Menu Area Starts ***** -->
         <section class="section" id="menu">
@@ -118,7 +127,6 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
               <img src="{% static 'images/jolrobles2.gif' %}" align="klassy cafe html template">
             </div>
         </section>
-
     {% endblock content %}
 {% block scripts %}
 {{block.super}}

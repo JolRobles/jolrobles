@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+PROYECTOS
+{% endblock title %}
+{% block content %}
+<section class="section" id="about">
+    <!-- Gallery Start -->
+    <div class="container-fluid pt-5 pb-3">
+      <div class="container">
+
+        <div class="row center" style="justify-content: center;">
+          <div class="col-8 text-center mb-2"  style="background-color:#000000; border-radius:20px">
+            <br>
+            <ul class="list-inline mb-4" id="portfolio-flters">
+              <li class="btn btn-outline-dark m-1 active" data-filter="*" style="color:#fff; border:0px">
+                Todos
+              </li>
+              <li class="btn btn-outline-dark m-1" data-filter=".first" style="color:#fff; border:0px">
+                Desarrollo de Software
+              </li>
+              <li class="btn btn-outline-dark m-1" data-filter=".second" style="color:#fff; border:0px">
+                Diseño
+              </li>
+              <li class="btn btn-outline-dark m-1" data-filter=".third" style="color:#fff; border:0px">
+                Soporte Técnico
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center pb-2">
+          <h1 class="mb-4">Portafolio</h1>
+        </div>
+        <div class="row portfolio-container">
+          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+              <div
+                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
+              >
+                <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">KinetPos
+                <p class="text-white">Director de Proyecto</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+              <div
+                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
+              >
+                <a href="#" class="text-white" style="font-size: 40px">KinetSupport
+                <p class="text-white">Desarrollador</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
+            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+              <div
+                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
+              >
+                <a href="#" class="text-white" style="font-size: 40px">Matriculas
+                <p class="text-white">Director de Proyecto - Desarrollador</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+              <div
+                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
+              >
+                <a href="#" class="text-white" style="font-size: 40px">Acoso
+                <p class="text-white">Director de Proyecto</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+              <div
+                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
+              >
+                <a href="#" class="text-white" style="font-size: 40px">Deveritas
+                <p class="text-white">Director de Proyecto</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
+            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+              <div
+                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
+              >
+                <a href="#" class="text-white" style="font-size: 40px">Calalogos
+                <p class="text-white">Director de Proyecto</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Gallery End -->
+
+    </section>
+    {% endblock content %}
+{% block scripts %}
+{{block.super}}
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript">
+  function CambiaColor(element){
+    $element = element.parentElement
+    let parent = $element.querySelector(`img[id="parent"]`);
+    parent.style = 'height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(0%)';
+  }
+  function CambiaNegro(element){
+    $element = element.parentElement
+    let parent = $element.querySelector(`img[id="parent"]`);
+    parent.style = 'height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%)';
+  }
+</script>
+{% endblock scripts %}

@@ -1,0 +1,35 @@
+{% load static %}
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container" style="max-width:1440px">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{% url 'home:index' %}" class="logo">
+                            <img src="{% static 'images/logooo1.gif' %}" align="klassy cafe html template">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                          <!-- <li id='seccion' onclick="itemSelected(this)"  style="border: solid; border-top-width: 10px; border-right-width:0px; border-bottom-width:0px; border-left-width:0px "><a href="{% url 'home:index' %}">INICIO</a></li> -->
+                            <li id='seccion' onclick="itemSelected(this)"   ><a href="{% url 'home:index' %}">INICIO</a></li>
+                            <li onclick="itemSelected(this)"><a href="{% url 'home:proyectos' %}">PROYECTOS</a></li>
+
+
+                            <li onclick="itemSelected(this)"><a href="{% url 'home:list_blog' %}">BLOG</a></li>
+                            <li onclick="itemSelected(this)"><a href="{% url 'home:list_blog' %}">FOTOGRAFIA</a></li>
+
+                            <li onclick="itemSelected(this)"><a href="{% url 'home:contactos' %}">CONTACTO</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ***** Header Area End ***** -->

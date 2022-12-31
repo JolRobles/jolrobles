@@ -4,6 +4,16 @@ from .models import *
 def index(request):
     return render(request, 'index.html')
 
+def proyectos(request):
+    return render(request, 'home/proyectos.html')
+def proyecto_detail(request, pk):
+
+    return render(request, 'home/proyecto_detail.html')
+
+def contactos(request):
+
+    return render(request, 'home/contacto.html')
+
 def blog(request, pk):
     blog = Blog.objects.get(pk=pk)
     blogs = Blog.objects.all()

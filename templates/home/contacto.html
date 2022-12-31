@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+CONTACTO
+{% endblock title %}
+{% block content %}
+<section class="section" id="about">
+    <div class="container">
+        <div class="row  center" style="justify-content: center;">
+              <div class="col-4 text-center mb-2">
+              <div class="right-content">
+                  <div class="thumb">
+                      <img  style="border-radius:50%;  filter: grayscale(100%);" class="parent" id="parent" src="{% static 'images/foto.png' %}" alt="">
+                      <p class="text-center" > El éxito llega para todos aquellos </p>
+                      <p class="text-center" > que estan ocupados buscándolo </p>
+                  </div>
+              </div>
+          </div>
+
+        </div>
+    </div>
+    <div class="container" style="background-color:#D9D9D9; border-radius:20px" >
+      <div class="col-md-12 row text-center" style="justify-content: center;">
+          <h1>DEJA TU MENSAJE</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label for="nombre"><h1>Nombre</h1></label>
+        </div>
+          <div class="col-md-10">
+          <input class="form-control" type="text" name="nombre" value="">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-12">
+          <textarea class="form-control" name="name" rows="8" cols="80"></textarea>
+        </div>
+      </div>
+      <div class="btn-sm col-md-12" style="justify-content: center; display: flex; border-radius:20px">
+        <button type="button" class="btn btn-dark"><h1>ENVIAR</h1></button>
+      </div>
+    </div>
+</section>
+
+    {% endblock content %}
+{% block scripts %}
+{{block.super}}
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript">
+  let parent = document.getElementById('parent');
+  console.log(parent);
+  parent.addEventListener('mouseover', function() {
+    parent.style = 'border-radius:50%;  filter: grayscale(0%);';
+  })
+  parent.addEventListener('mouseout', function() {
+    parent.style = 'border-radius:50%;  filter: grayscale(100%);';
+  })
+</script>
+{% endblock scripts %}
