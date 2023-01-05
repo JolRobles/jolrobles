@@ -45,7 +45,7 @@ INICIO
     <section class="section" id="menu">
         <div class="menu-item-carousel">
                 <!-- <div class="owl-menu-item owl-carousel" style="width:1500px; margin-right:10px"> -->
-                <div class="owl-menu-item owl-carousel parent" style="width: 2550px;">
+                <div id="parent" class="owl-menu-item owl-carousel parent" style="width: 2550px; filter: grayscale(100%);"  onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">>
                   <div class="item">
                     <div class='card card1'>
                       <div class='info'>
@@ -104,5 +104,19 @@ INICIO
   parent.addEventListener('mouseout', function() {
     parent.style = 'border-radius:50%;  filter: grayscale(100%);';
   })
+</script>
+<script type="text/javascript">
+  function CambiaColor(element){
+    console.log(element);
+    $element = element.parentElement
+    console.log($element);
+    let parent = $element.querySelector(`div[id="parent"]`);
+    parent.style = 'height:350px; border-radius: 20px; filter: grayscale(0%);'
+  }
+  function CambiaNegro(element){
+    $element = element.parentElement
+    let parent = $element.querySelector(`div[id="parent"]`);
+    parent.style = 'height:350px; border-radius: 20px; filter: grayscale(100%);'
+  }
 </script>
 {% endblock scripts %}
