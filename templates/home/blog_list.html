@@ -11,85 +11,7 @@ BLOG
             <h3 class="mb-4">Que la lectura sea un hábito que fomentemos a diario</h3>
           </div>
           <div class="row">
-
           {% for blog in blogs %}
-          <div class="col-md-6" >
-            <div class="item"style="margin:5px">
-              <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
-                <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
-                  <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="item"style="margin:5px">
-              <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
-                <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
-                  <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="item"style="margin:5px">
-              <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
-                <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
-                  <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="item"style="margin:5px">
-              <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
-                <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
-                  <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="item"style="margin:5px">
-              <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
-                <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
-                  <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="item"style="margin:5px">
-              <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
-                <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
-                  <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" >
-            <div class="item"style="margin:5px">
-              <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
-                <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
-                  <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="col-md-6" >
             <div class="item"style="margin:5px">
               <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
@@ -103,7 +25,6 @@ BLOG
           </div>
           {% endfor %}
         </div>
-
         </div>
     </section>
     <!-- ***** About Area Ends ***** -->

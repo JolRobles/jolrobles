@@ -7,6 +7,8 @@ import datetime
 class Blog(models.Model):
     titulo = models.CharField(max_length=200)
     imagen = models.ImageField(upload_to='', null = True, blank = True)
+    imagen_2 = models.ImageField(upload_to='', null = True, blank = True)
+    detalle_principal = models.TextField(null=True, blank=True)
     detalle = models.TextField(null=True, blank=True)
     fecha = models.DateField(default=now)
     autor = models.ForeignKey(User, on_delete=models.CASCADE,)
