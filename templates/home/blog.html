@@ -6,10 +6,10 @@ DETALLE PROYECTO
 {% block content %}
 <section class="section" id="about">
     <!-- Gallery Start -->
-    <div class="container-fluid pt-5 pb-3">
+    <div class="container-fluid ">
       <div class="container" style="max-width:1440px">
         <div class="text-center pb-2">
-          <h1 class="mb-4">{{blog.titulo}}</h1>
+          <h1 class="mb-4" style="font-weight: bolt;">{{blog.titulo}}</h1>
         </div>
         <div class="row portfolio-container">
           <div class="col-lg-6 col-md-6 mb-4 portfolio-item first">
@@ -63,19 +63,21 @@ DETALLE PROYECTO
                     <div class="owl-menu-item owl-carousel" style="width: 2550px;">
                       {% for blog in blogs %}
                       <div class="item">
-                        <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                          <img class="w-100 parent" id="parent"  src="{{blog.imagen.url}}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-                          <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">{{blog.titulo}}
-                            </a>
+                        <a href="{% url 'home:blog'  blog.pk %}">
+                          <div class="position-relative overflow-hidden" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
+                            <img class="w-100 parent" id="parent"  src="{{blog.imagen.url}}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+                            <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
+                              <p class="text-white" style="font-size: 40px; padding-top: 10px; padding-bottom: 10px;">{{blog.titulo}}
+                              </p>
+                            </div>
                           </div>
-                        </div>
+                        </a>
                       </div>
                       {% endfor %}
                       </div>
                     </div>
             <div class="text-center" style="margin:30px">
-              <img src="{% static 'images/logo_blanco.png' %}" align="klassy cafe html template">
+              <img src="{% static 'images/logo_blanco.png' %}">
             </div>
         </section>
 

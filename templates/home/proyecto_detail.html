@@ -6,15 +6,15 @@ DETALLE PROYECTO
 {% block content %}
 <section class="section" id="about">
     <!-- Gallery Start -->
-    <div class="container-fluid pt-5 pb-3">
+    <div class="container-fluid ">
       <div class="container">
         <div class="text-center pb-2">
-          <h1 class="mb-4">KinetPos</h1>
+          <h1 class="mb-4">{{proecto.nombre}}</h1>
         </div>
         <div class="row portfolio-container">
           <div class="col-lg-6 col-md-6 mb-4 portfolio-item first">
-            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:350px; border-radius: 20px; filter: grayscale(100%);"/>
+            <div class="position-relative overflow-hidden mb-2">
+              <img class="w-100 parent" id="parent"  src="{{proyecto.imagen.url}}" alt="" style="height:350px; border-radius: 20px;"/>
               <div
                 class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
               >
@@ -28,10 +28,7 @@ DETALLE PROYECTO
               </div>
               <br>
               <div class="portfolio-btn d-flex justify-content-center">
-                <p style="text-align:justify">
-                ¿Qué es Lorem Ipsum?
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-</p>
+                <p style="text-align:justify">{{proyecto.descripcion}}</p>
               </div>
             </div>
           </div>
@@ -46,13 +43,13 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
                 </thead>
                 <tbody>
                   <tr>
-                    <td scope="col"><b>Link del proyecto: </b>  <a href="https://www.kinetpos.com/">https://www.kinetpos.com/</a></td>
+                    <td scope="col"><b>Link del proyecto: </b>  <a href="{{proyecto.link}}">{{proyecto.link}}</a></td>
                   </tr>
                   <tr>
-                    <td scope="col"><b>Empresa: </b>  Kirios</td>
+                    <td scope="col"><b>Empresa: </b>  {{proyecto.empresa}}</td>
                   </tr>
                   <tr>
-                    <td scope="col"><b>Rol desempeñado: </b>  Director de Proyecto</td>
+                    <td scope="col"><b>Rol desempeñado: </b>  {{proyecto.rol_realizado}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -71,60 +68,24 @@ Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de te
             <div class="menu-item-carousel">
                     <!-- <div class="owl-menu-item owl-carousel" style="width:1500px; margin-right:10px"> -->
                     <div class="owl-menu-item owl-carousel" style="width: 2550px;">
+                      {% for proyect in proyectos %}
                       <div class="item">
-                        <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                          <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-                          <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">KinetPos
-                            <p class="text-white">Director de Proyecto</p>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                          <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-                          <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">KinetPos
-                            <p class="text-white">Director de Proyecto</p>
-                            </a>
-                          </div>
-                        </div>>
-                        </div>
-                        <div class="item">
-                          <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                            <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+                        <a href="{% url 'home:proyecto_detail' proyect.pk %}">
+                          <div class="position-relative overflow-hidden mb-2">
+                            <img class="w-100 parent" id="parent"  src="{{proyect.imagen.url}}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px;"/>
                             <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                              <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">KinetPos
-                              <p class="text-white">Director de Proyecto</p>
+                              <a href="{% url 'home:proyecto_detail' proyect.pk %}" class="text-white" style="font-size: 40px">{{proyect.nombre}}
+                                <p class="text-white">{{proyect.rol_realizado}}</p>
                               </a>
                             </div>
-                          </div>>
                           </div>
-                          <div class="item">
-                            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-                              <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                                <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">KinetPos
-                                <p class="text-white">Director de Proyecto</p>
-                                </a>
-                              </div>
-                            </div>>
-                            </div>
-                            <div class="item">
-                              <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                                <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-                                <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                                  <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">KinetPos
-                                  <p class="text-white">Director de Proyecto</p>
-                                  </a>
-                                </div>
-                              </div>>
-                              </div>
+                        </a>
+                      </div>
+                      {% endfor %}
                       </div>
                     </div>
             <div class="text-center" style="margin:30px">
-              <img src="{% static 'images/jolrobles2.gif' %}" align="klassy cafe html template">
+              <img src="{% static 'images/logo_blanco.png' %}">
             </div>
         </section>
     {% endblock content %}

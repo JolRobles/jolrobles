@@ -12,16 +12,16 @@ BLOG
           </div>
           <div class="row">
           {% for blog in blogs %}
-          <div class="col-md-6" >
+          <div class="col-md-4" >
+            <a href="{% url 'home:blog' blog.pk %}">
             <div class="item"style="margin:5px">
               <div class='card' style="background: url({{blog.imagen.url}}); min-height:300px">
                 <div class='info'>
-                  <a href="{% url 'home:blog' blog.pk %}">
                   <h1 class='title' >{{blog.titulo}}</h1>
-                </a>
                 </div>
               </div>
             </div>
+            </a>
           </div>
           {% endfor %}
         </div>

@@ -10,8 +10,16 @@ class BlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
         'id',
         'titulo',
         'imagen',
-        'detalle',
         'fecha',
         'autor',
+        'activo',
+        )
+
+@admin.register(Proyecto)
+class ProyectoAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'nombre',
         'activo',
         )

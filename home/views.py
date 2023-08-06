@@ -5,10 +5,19 @@ def index(request):
     return render(request, 'index.html')
 
 def proyectos(request):
-    return render(request, 'home/proyectos.html')
+    proyectos = Proyecto.objects.filter(activo=True)
+    context = {
+        'proyectos':proyectos
+    }
+    return render(request, 'home/proyectos.html', context)
 def proyecto_detail(request, pk):
-
-    return render(request, 'home/proyecto_detail.html')
+    proyecto = Proyecto.objects.get(pk=pk)
+    proyectos = Proyecto.objects.filter(activo=True)
+    context = {
+        'proyecto':proyecto,
+        'proyectos':proyectos
+    }
+    return render(request, 'home/proyecto_detail.html', context)
 
 def contactos(request):
 
@@ -24,7 +33,7 @@ def blog(request, pk):
     return render(request, 'home/blog.html', context)
 
 def list_blog(request):
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.filter(activo=True)
     context = {
         'blogs':blogs
     }

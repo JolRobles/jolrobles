@@ -6,24 +6,23 @@ PROYECTOS
 {% block content %}
 <section class="section" id="about">
     <!-- Gallery Start -->
-    <div class="container-fluid pt-5 pb-3">
+    <div class="container-fluid ">
       <div class="container" style="max-width:1440px">
 
         <div class="row center" style="justify-content: center;">
-          <div class="col-8 text-center mb-2"  style="background-color:#000000; border-radius:20px">
-            <br>
-            <ul class="list-inline mb-4" id="portfolio-flters">
+          <div class="col-md-8 col-xs-12 text-center mb-2"  style="background-color:#000000; border-radius:20px">
+            <ul class="list-inline" id="portfolio-flters" style="margin-top: 10px; margin-bottom: 10px;">
               <li class="btn btn-outline-dark m-1 active" data-filter="*" style="color:#fff; border:0px">
                 Todos
               </li>
               <li class="btn btn-outline-dark m-1" data-filter=".first" style="color:#fff; border:0px">
-                Desarrollo de Software
+                Software
               </li>
               <li class="btn btn-outline-dark m-1" data-filter=".second" style="color:#fff; border:0px">
                 Diseño
               </li>
               <li class="btn btn-outline-dark m-1" data-filter=".third" style="color:#fff; border:0px">
-                Soporte Técnico
+                Fotografía
               </li>
             </ul>
           </div>
@@ -32,78 +31,26 @@ PROYECTOS
           <h1 class="mb-4">Portafolio</h1>
         </div>
         <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
-                <a href="{% url 'home:proyecto_detail' 1 %}" class="text-white" style="font-size: 40px">KinetPos
-                <p class="text-white">Director de Proyecto</p>
-                </a>
-              </div>
+          {% for proyecto in proyectos %}
+            {% if proyecto.tipo_proyecto == 'S' %}
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+            {% elif proyecto.tipo_proyecto == 'D' %}
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+              {% else %}
+            <div class="col-lg-4 col-md-6 mb-4 portfolio-item third"></div>
+            {% endif %}
+              <a href="{% url 'home:proyecto_detail' proyecto.pk %}" >
+                <div class="position-relative overflow-hidden mb-2">
+                  <img class="w-100 parent" id="parent"  src="{{proyecto.imagen.url}}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; "/>
+                  <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center text-center">
+                    <h5 class="text-white" style="font-size: 40px">{{proyecto.nombre}}
+                    <p class="text-white">{{proyecto.rol_realizado}}</p>
+                    </h5>
+                  </div>
+                </div>
+              </a>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
-                <a href="#" class="text-white" style="font-size: 40px">KinetSupport
-                <p class="text-white">Desarrollador</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
-                <a href="#" class="text-white" style="font-size: 40px">Matriculas
-                <p class="text-white">Director de Proyecto - Desarrollador</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
-                <a href="#" class="text-white" style="font-size: 40px">Acoso
-                <p class="text-white">Director de Proyecto</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
-                <a href="#" class="text-white" style="font-size: 40px">Deveritas
-                <p class="text-white">Director de Proyecto</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-            <div class="position-relative overflow-hidden mb-2" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-              <img class="w-100 parent" id="parent"  src="{% static 'images/foto3.jpg' %}" alt="" style="height:250px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
-                <a href="#" class="text-white" style="font-size: 40px">Calalogos
-                <p class="text-white">Director de Proyecto</p>
-                </a>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>

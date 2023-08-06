@@ -10,19 +10,14 @@ INICIO
         <div class="container" style="max-width:1440px">
             <div class="row">
               <div class="col-lg-4 col-md-4 col-xs-12">
-                  <div class="right-content">
-                      <div class="thumb">
-                          <img  style="border-radius:50%;  filter: grayscale(100%);" class="parent" id="parent" src="{% static 'images/foto.png' %}" alt="">
-                          <br>
-                          <p class="text-center" style="line-height:15px; margin:5px"> El éxito llega para todos aquellos que <br>estan ocupados buscándolo</p>
-                      </div>
-                  </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                  <img  style="border-radius:50%;  filter: grayscale(100%); max-width: 300px;" class="parent" id="parent" src="{% static 'images/foto.png' %}" alt="">
+                </div>
+                <div>
+                  <p class="text-center" style="line-height:15px; margin:5px"> El éxito llega para todos aquellos que <br>estan ocupados buscándolo</p>
+                </div>
               </div>
                 <div class="col-lg-8 col-md-8 col-xs-12">
-                  <br>
-                  <br>
-                  <br>
-                  <br>
                     <div class="left-text-content">
                         <div class="section-heading">
                             <h2>QUIEN SOY</h2>
@@ -44,9 +39,8 @@ INICIO
     <!-- ***** Menu Area Starts ***** -->
     <section class="section" id="menu">
         <div class="menu-item-carousel">
-                <!-- <div class="owl-menu-item owl-carousel" style="width:1500px; margin-right:10px"> -->
-                <div id="parent" class="owl-menu-item owl-carousel parent" style="width: 2550px; filter: grayscale(100%);"  onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">>
-                  <div class="item">
+                <div id="parent" class="owl-menu-item owl-carousel parent" style="filter: grayscale(100%);"  onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">>
+                  <div class="item" style="max-width: 350px; margin-left: 15px;">
                     <div class='card card1'>
                       <div class='info'>
                         <h1 class='title'>Desarrollo</h1>
@@ -54,7 +48,7 @@ INICIO
                       </div>
                     </div>
                   </div>
-                  <div class="item">
+                  <div class="item" style="max-width: 350px; margin-left: 15px;">
                     <div class='card card2'>
                       <div class='info'>
                         <h1 class='title'>Soporte Técnico</h1>
@@ -62,7 +56,7 @@ INICIO
                       </div>
                     </div>
                   </div>
-                  <div class="item">
+                  <div class="item" style="max-width: 350px; margin-left: 15px;">
                     <div class='card card3'>
                       <div class='info'>
                         <h1 class='title'>Diseño</h1>
@@ -70,7 +64,7 @@ INICIO
                       </div>
                     </div>
                   </div>
-                  <div class="item">
+                  <div class="item" style="max-width: 350px; margin-left: 15px;">
                     <div class='card card4'>
                       <div class='info'>
                         <h1 class='title'>Fotografía</h1>
@@ -84,12 +78,12 @@ INICIO
 
 
         <div class="text-center" style="margin:30px; margin-block-end:0px">
-          <img src="{% static 'images/logo_blanco.png' %}" align="klassy cafe html template">
+          <img src="{% static 'images/logo_blanco.png' %}">
         </div>
     </section>
     <!-- ***** Menu Area Ends ***** -->
 
-    <div class="text-center" style="margin:100px">
+    <div class="text-center" style="margin-top:80px">
         <h1>Que tus talentos sean para servir a los demás</h1>
     </div>
 {% endblock content %}
@@ -99,10 +93,10 @@ INICIO
   let parent = document.getElementById('parent');
   console.log(parent);
   parent.addEventListener('mouseover', function() {
-    parent.style = 'border-radius:50%;  filter: grayscale(0%);';
+    parent.style = 'border-radius:50%;  filter: grayscale(0%);  max-width: 300px;';
   })
   parent.addEventListener('mouseout', function() {
-    parent.style = 'border-radius:50%;  filter: grayscale(100%);';
+    parent.style = 'border-radius:50%;  filter: grayscale(100%);  max-width: 300px;';
   })
 </script>
 <script type="text/javascript">

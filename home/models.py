@@ -19,3 +19,24 @@ class Blog(models.Model):
         verbose_name_plural='Blogs'
     def __str__(self):
         return self.titulo
+
+class Proyecto(models.Model):
+    TIPO_PROYECTO = [
+        ('S','Software'),
+        ('D','Diseño'),
+        ('F','Fotografía'),
+    ]
+    nombre = models.CharField(max_length=200)
+    imagen = models.ImageField(upload_to='', null = True, blank = True)
+    rol_realizado = models.CharField(max_length=200, null=True, blank=True)
+    descripcion = models.TextField(null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    empresa = models.CharField(max_length=200)
+    tipo_proyecto = models.CharField(blank=True, null=True, choices=TIPO_PROYECTO, max_length=50)
+    activo = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name='Proyecto'
+        verbose_name_plural='Proyectos'
+    def __str__(self):
+        return self.nombre
