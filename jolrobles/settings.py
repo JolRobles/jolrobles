@@ -83,8 +83,7 @@ WSGI_APPLICATION = 'jolrobles.wsgi.application'
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': 'jolrobles',
 #         'USER': 'postgres',
-#         'PASSWORD': 'qd8RIVrjMweP301TaRoGI4KJfWbGbU6p4g8ULNCb', #yorch
-#         # 'PASSWORD': 'root', #yorch
+#         'PASSWORD': 'root', #yorch
 #         'HOST': 'localhost',
 #         'PORT': 5432,
 #     }
@@ -92,10 +91,20 @@ WSGI_APPLICATION = 'jolrobles.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'jolrobles',
+        'USER': 'admin',
+        'PASSWORD': 'GU8mXA8wcyheOtPsY6d7YCjhIm9jDLdG', #yorch
+        'HOST': 'dpg-cj85dttjeehc73a65vag-a',
+        'PORT': 5432,
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
