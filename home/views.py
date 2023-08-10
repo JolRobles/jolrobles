@@ -8,13 +8,13 @@ def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            user.is_staff = True
-            user.is_superuser = True
-            user.active = True
-            user.save()
+            # user = form.save()
+            # user.is_staff = True
+            # user.is_superuser = True
+            # user.active = True
+            # user.save()
             # Iniciar sesión al usuario después del registro
-            login(request, user)
+            # login(request, user)
             return redirect('home:list_blog')  # Cambia 'home' por el nombre de tu vista de inicio
     else:
         form = UserCreationForm()
