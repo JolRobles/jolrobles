@@ -1,7 +1,14 @@
-#!/usr/bin/env bash
-# exit on error
-set -o errexit
 
+#!/bin/bash
 
-python manage.py collectstatic --no-input
+# Activar el entorno virtual
+source ./bin/activate
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar migraciones
 python manage.py migrate
+
+# Desactivar el entorno virtual
+deactivate
