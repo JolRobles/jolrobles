@@ -1,0 +1,20 @@
+databases:
+  - name: admin
+    databaseName: jolrobles
+    user: admin
+
+services:
+  - type: web
+    name: jolrobles
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn jolrobles.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jolrobles
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
