@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap5 %}
 {% block title %}
 DETALLE PROYECTO
 {% endblock title %}
 {% block content %}
 <section class="section" id="about">
+  {% bootstrap_messages %}
     <!-- Gallery Start -->
     <div class="container-fluid ">
       <div class="container" style="max-width:1440px">
         <div class="text-center pb-2">
-          <h1 class="mb-4" style="font-weight: bolt;">{{blog.titulo}}</h1>
+          <h1 class="mb-4" style="font-weight: bolt;">{{blog_object.titulo}}</h1>
         </div>
         <div class="row portfolio-container">
           <div class="col-lg-6 col-md-6 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2">
-              <img class="w-100 parent" id="parent"  src="{{blog.imagen.url}}" alt="" style="height:350px; border-radius: 20px;"/>
+              <img class="w-100 parent" id="parent"  src="{{blog_object.imagen.url}}" alt="" style="height:350px; border-radius: 20px;"/>
               <div
                 class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
               >
@@ -23,11 +25,11 @@ DETALLE PROYECTO
           </div>
           <div class="col-lg-6 col-md-6 mb-4 portfolio-item second">
             <div class="position-relative overflow-hidden mb-2">
-              <p align="right">{{blog.autor}} | {{blog.fecha}}</p>
+              <p align="right">{{blog_object.autor}} | {{blog_object.fecha}}</p>
               <br>
               <div class="portfolio-btn d-flex justify-content-center">
                 <div style="text-align:justify">
-                  <p >{{blog.detalle_principal|linebreaks}}</p>
+                  <p >{{blog_object.detalle_principal|linebreaks}}</p>
                 </div>
               </div>
             </div>
@@ -35,18 +37,43 @@ DETALLE PROYECTO
           <div class="col-lg-12 col-md-12 mb-4 portfolio-item second">
             <div class="position-relative overflow-hidden mb-2">
               <div style="text-align:justify">
-                <p >{{blog.detalle|linebreaks}}</p>
+                <p >{{blog_object.detalle|linebreaks}}</p>
               </div>
             </div>
           </div>
           <div class="col-lg-12 col-md-12 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2">
-              <img class="w-100 parent" id="parent"  src="{{blog.imagen_2.url}}" alt="" style="height:350px; border-radius: 20px;"/>
+              <img class="w-100 parent" id="parent"  src="{{blog_object.imagen_2.url}}" alt="" style="height:350px; border-radius: 20px;"/>
               <div
                 class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
               >
               </div>
             </div>
+          </div>
+          <div class="col-md-12 mb-4 portfolio-item ">
+            <h5 style="padding: 10px; font-weight: bold;" class="text-center">Deja tu comentario </h5>
+            <form method="post">
+              {% csrf_token %}
+              <div class="row">
+                <input id="pk_blog_object" name="pk_blog_object" type="hidden" value="{{blog_object.pk}}">
+                <div class="col-md-6"> {% bootstrap_field respuesta_form.nombre layout="inline" %}</div>
+                <div class="col-md-6"> {% bootstrap_field respuesta_form.email layout="inline" %}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-12"> {% bootstrap_field respuesta_form.comentario layout="inline" %}</div>
+              </div>
+              <div class="col-md-12" style="text-align: center; vertical-align: middle;display: inline-block; padding: 10px;">
+                <button class="btn btn-success text-center" type="submit">Guardar</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-12 mb-4 portfolio-item ">
+            <h5 style="padding: 10px; font-weight: bold;" class="text-center">Comentarios</h5>
+            {% for comentario in respuestas %}
+            <div style="background-color: #343a40; border-radius: 20px; margin: 5px;">
+              <p style="color: white; padding: 10px;">{{comentario.comentario}}. Att: {{comentario.nombre}}</p>
+            </div>
+              {% endfor %}
           </div>
         </div>
       </div>
@@ -61,13 +88,13 @@ DETALLE PROYECTO
             <div class="menu-item-carousel">
                     <!-- <div class="owl-menu-item owl-carousel" style="width:1500px; margin-right:10px"> -->
                     <div class="owl-menu-item owl-carousel" style="width: 2550px;">
-                      {% for blog in blogs %}
+                      {% for item in blogs %}
                       <div class="item">
-                        <a href="{% url 'home:blog'  blog.pk %}">
+                        <a href="{% url 'home:blog'  item.pk %}">
                           <div class="position-relative overflow-hidden" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                            <img class="w-100 parent" id="parent"  src="{{blog.imagen.url}}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+                            <img class="w-100 parent" id="parent"  src="{{item.imagen.url}}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
                             <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                              <p class="text-white" style="font-size: 40px; padding-top: 10px; padding-bottom: 10px;">{{blog.titulo}}
+                              <p class="text-white" style="font-size: 40px; padding-top: 10px; padding-bottom: 10px;">{{item.titulo}}
                               </p>
                             </div>
                           </div>

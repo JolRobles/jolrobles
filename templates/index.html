@@ -19,12 +19,12 @@ INICIO
               </div>
                 <div class="col-lg-8 col-md-8 col-xs-12">
                     <div class="left-text-content">
+                      {% for item in quien_soy %}
                         <div class="section-heading">
-                            <h2>QUIEN SOY</h2>
+                            <h2>{{item.titulo}}</h2>
                         </div>
-                        <p style="text-align:justify" >Tecnólogo, 25 años de edad, proviene del cantón Olmedo provincia de Loja. Se graduó en la Carrera de Sistemas de Automatización del Instituto Tecnológico Superior Sudamericano, CTO (Chief Technology Officer / Dirección del área tecnológica) de la empresa de tecnología KiriosNet donde se desempeña como desarrollador de software en las tecnologías: Python, Django, JavaScript.
-                          <br>
-                          <br>Es una persona emprendedora, adora la tecnología, los retos, caracterizado por la persistencia y nunca para de aprender. Su sueño, crear un mundo mejor desarrollando una cultura de colaboración continua.</p>
+                        <p style="text-align:justify" >{{item.descripcion|linebreaks}}</p>
+                      {% endfor %}
                     </div>
                 </div>
 

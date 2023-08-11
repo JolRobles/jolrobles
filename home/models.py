@@ -40,3 +40,26 @@ class Proyecto(models.Model):
         verbose_name_plural='Proyectos'
     def __str__(self):
         return self.nombre
+    
+class QuienSoy(models.Model):
+    titulo = models.CharField(max_length=200)
+    descripcion = models.TextField(null=True, blank=True)
+    class Meta:
+        verbose_name='QuienSoy'
+        verbose_name_plural='QuienSoy'
+    def __str__(self):
+        return self.titulo
+    
+
+class RespuestaBlog(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, null=True, blank=True)
+    nombre = models.CharField(max_length=200)
+    email = models.EmailField()
+    comentario = models.TextField(null=True, blank=True)
+    fecha_hora = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name='RespuestaBlog'
+        verbose_name_plural='RespuestasBlog'
+    def __str__(self):
+        return self.nombre

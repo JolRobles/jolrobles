@@ -23,3 +23,19 @@ class ProyectoAdmin(ImportExportModelAdmin, admin.ModelAdmin):
         'nombre',
         'activo',
         )
+
+@admin.register(QuienSoy)
+class QuienSoyAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'titulo',
+        )
+    
+@admin.register(RespuestaBlog)
+class RespuestaBlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+
+    list_display = (
+        'id',
+        'nombre',
+        )

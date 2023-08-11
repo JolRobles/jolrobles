@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
+from django.contrib import messages
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -25,7 +27,11 @@ def register(request):
     return render(request, 'home/register.html', context)
 
 def index(request):
-    return render(request, 'index.html')
+    quien_soy = QuienSoy.objects.filter()
+    context = {
+        'quien_soy':quien_soy
+    }
+    return render(request, 'index.html', context)
 
 def proyectos(request):
     proyectos = Proyecto.objects.filter(activo=True)
@@ -46,12 +52,35 @@ def contactos(request):
 
     return render(request, 'home/contacto.html')
 
+
 def blog(request, pk):
-    blog = Blog.objects.get(pk=pk)
+    blog_object = Blog.objects.get(pk=pk)
+    respuestas = RespuestaBlog.objects.filter(blog=blog_object)
     blogs = Blog.objects.all()
+    respuesta_formulario = RespuestaBlogForm()
+    if request.method == 'POST':
+        respuesta_formulario = RespuestaBlogForm(request.POST, request.FILES)
+        if respuesta_formulario.is_valid():
+            respuesta = respuesta_formulario.save(commit=False)
+            respuesta.blog = blog_object
+            respuesta.save()
+            messages.success(request, f'Respuesta Creada, ¡Muchas gracias!')
+            return redirect('home:blog', blog_object.pk)
+        else:
+            context = {
+                'blog_object':blog_object,
+                'blogs':blogs,
+                'respuesta_form':respuesta_formulario,
+                'respuestas':respuestas,
+            }
+            messages.error(request, 'Corrija los errores')
+            print(respuesta_formulario.errors)
+            return render(request, 'home/blog.html', context)
     context = {
-        'blog':blog,
+        'blog_object':blog_object,
         'blogs':blogs,
+        'respuesta_form':respuesta_formulario,
+        'respuestas':respuestas
     }
     return render(request, 'home/blog.html', context)
 
