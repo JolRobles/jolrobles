@@ -42,6 +42,7 @@ class Proyecto(models.Model):
         return self.nombre
     
 class QuienSoy(models.Model):
+    img_perfil = models.ImageField(null=True, blank=True)
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField(null=True, blank=True)
     class Meta:
