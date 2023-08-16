@@ -5,6 +5,7 @@ import datetime
 # Create your models here.
 # Create your models here.
 class Blog(models.Model):
+    imagen_portada = models.ImageField(upload_to='', null = True, blank = True)
     titulo = models.CharField(max_length=200)
     imagen = models.ImageField(upload_to='', null = True, blank = True)
     imagen_2 = models.ImageField(upload_to='', null = True, blank = True)
