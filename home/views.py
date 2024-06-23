@@ -39,6 +39,14 @@ def proyectos(request):
         'proyectos':proyectos
     }
     return render(request, 'home/proyectos.html', context)
+
+def podcast(request):
+    # proyectos = Proyecto.objects.filter(activo=True)
+    context = {
+        'proyectos':'proyectos'
+    }
+    return render(request, 'home/podcast.html', context)
+
 def proyecto_detail(request, pk):
     proyecto = Proyecto.objects.get(pk=pk)
     proyectos = Proyecto.objects.filter(activo=True)

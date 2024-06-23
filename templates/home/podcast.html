@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+PODCAST
+{% endblock title %}
+{% block content %}
+<section class="section" id="about">
+    <div class="container" style="max-width:1440px">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-xs-12">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img style=" max-width: 300px;"  alt="Perspectivas" src="https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/staging/podcast_uploaded_nologo400/39160271/39160271-1716780418767-1bdd9ad337965.jpg" class="parent">
+            </div>
+          </div>
+            <div class="col-lg-8 col-md-8 col-xs-12">
+              <div class="left-text-content">
+                <div class="sc-cLGQGY behWLC"><h1 class="sc-dBYnXA ckEzMd" style="font-weight: 600; font-size: 2.75rem;">Perspectivas</h1>
+                    <h2 data-encore-id="type" class="Type__TypeElement-sc-goli3j-0 ceNHgb">By JolRobles</h2>
+                
+                  <div class="section-heading">
+                      <h2>{{item.titulo}}</h2>
+                  </div>
+                  <p style="text-align:justify" >Bienvenidos a "Perspectivas", el podcast donde nos sumergimos en las historias y conocimientos de personas de todos los ámbitos de la vida. Cada episodio es una ventana abierta a las experiencias únicas y valiosas de nuestros invitados, quienes comparten sus vivencias, desafíos y aprendizajes.
+
+                    <br>"Perspectivas" ofrece una plataforma para conversaciones profundas y enriquecedoras. Acompáñanos mientras exploramos cómo las diferentes trayectorias y contextos pueden ofrecernos nuevas formas de ver el mundo.</p>
+              </div>
+              <div class="sc-fiyOEG fYkMNd">
+                <a class="Button-sc-y0gtbx-0 jKyRee encore-text-body-small-bold encore-gray-set" href="https://open.spotify.com/show/2LZPfau85APzDoWHzsA52Q" target="_blank" rel="noopener noreferrer" data-encore-id="buttonSecondary">
+                    <span aria-hidden="true" class="IconWrapper__Wrapper-sc-ihacte-0 iNaejj">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 400 16" class="Svg-sc-ytk21e-0 dbYkfl">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.539a.498.498 0 0 1-.686.166c-1.878-1.148-4.243-1.408-7.028-.772a.499.499 0 0 1-.222-.972c3.048-.696 5.662-.396 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.322-5.428-1.705-7.972-.932a.624.624 0 1 1-.362-1.194c2.905-.882 6.517-.455 8.987 1.063a.624.624 0 0 1 .205.858zm.084-2.269C10.153 5.561 5.9 5.42 3.438 6.167a.748.748 0 1 1-.434-1.432c2.826-.857 7.523-.692 10.492 1.07a.748.748 0 0 1-.764 1.287z">
+                            
+                        </path>
+                    </svg>
+                </span>Escuchar en Spotify</a>
+            </div>
+                
+        </div>
+    </div>
+</section>
+<section class="section" id="menu">
+    <div class="container-fluid ">
+        <div class="container">
+            <div class="row center" style="justify-content: center;">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/7gG2R5eghkD6QhjMYgye7k?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="row center" style="justify-content: center; padding-top: 10px;">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1kHjkHEkdenmmhoAQoyCf8?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="row center" style="justify-content: center; padding-top: 10px;">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/56w9q6c6RTr7IKzGgRo2pD?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="row center" style="justify-content: center; padding-top: 10px;">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5InJqenOIuJwsOYNA5z9Pu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}
+{% block scripts %}
+{{block.super}}
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript">
+    let parent = document.getElementById('parent');
+    console.log(parent);
+    parent.addEventListener('mouseover', function () {
+        parent.style = 'border-radius:50%;  filter: grayscale(0%);';
+    })
+    parent.addEventListener('mouseout', function () {
+        parent.style = 'border-radius:50%;  filter: grayscale(100%);';
+    })
+</script>
+{% endblock scripts %}

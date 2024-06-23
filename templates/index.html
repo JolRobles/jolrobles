@@ -34,48 +34,55 @@ INICIO
     </section>
     <!-- ***** About Area Ends ***** -->
     <div class="text-center" style="margin:20px">
-      <h2>MIS HABILIDADES</h2>
+      <h2>SECCIONES</h2>
     </div>
-
     <!-- ***** Menu Area Starts ***** -->
     <section class="section" id="menu">
-        <div class="menu-item-carousel">
-                <div id="parent" class="owl-menu-item owl-carousel parent" style="filter: grayscale(100%);"  onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">>
-                  <div class="item" style="max-width: 350px; margin-left: 15px;">
-                    <div class='card card1'>
-                      <div class='info'>
-                        <h1 class='title'>Desarrollo</h1>
-                        <p class='description'>Python - Django <br>JavaScript - Flutter <br>NodeJs - Angular <br>Git - Html - Css <br>SO: Windows - Linux</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item" style="max-width: 350px; margin-left: 15px;">
-                    <div class='card card2'>
-                      <div class='info'>
-                        <h1 class='title'>Soporte Técnico</h1>
-                        <p class='description'>Formato completo<br>Limpieza interna <br>Programas y drivers <br>Disco duros y respaldos<br>SO: Windows - Linux</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item" style="max-width: 350px; margin-left: 15px;">
-                    <div class='card card3'>
-                      <div class='info'>
-                        <h1 class='title'>Diseño</h1>
-                        <p class='description'>Photoshop<br>Ilustrador<br>Premier<br>Audition<br>Marca corporativa</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item" style="max-width: 350px; margin-left: 15px;">
-                    <div class='card card4'>
-                      <div class='info'>
-                        <h1 class='title'>Fotografía</h1>
-                        <p class='description'>Paisajes<br>Personas<br>Familias<br>Lo hago por<br>Hobbie</p>
-                      </div>
-                    </div>
-                  </div>
-
+      <div class="content">
+        <div class="row">
+          
+          <div class="col-md-3" style="padding-top: 10px;">
+            <a href="{% url 'home:podcast' %}">
+              <div class='card card2'>
+                <div class='info'>
+                  <h1 class='title'>PODCAST</h1>
+                  <p class='description'>ENTREVISTAS<br>HISTORIAS <br>APRENDIZAJES <br>VIDA COTIDIANA<br>SUPERACIÖN</p>
                 </div>
               </div>
+            </a>
+          </div>
+          <div class="col-md-3" style="padding-top: 10px;">
+            <a href="{% url 'home:proyectos' %}">
+              <div class='card card1'>
+                <div class='info'>
+                  <h1 class='title'>DESARROLLO</h1>
+                  <p class='description'>Python - Django <br>JavaScript - Flutter <br>NodeJs - Angular <br>Git - Html - Css <br>SO: Windows - Linux</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3" style="padding-top: 10px;">
+            <a href="{% url 'home:proyectos' %}">
+              <div class='card card3'>
+                <div class='info'>
+                  <h1 class='title'>DISEÑO</h1>
+                  <p class='description'>PHOTOSHOP<br>ILUSTRADOR<br>PREMIER<br>AUDITION<br>MARCAS</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3" style="padding-top: 10px;">
+            <a href="{% url 'home:list_blog' %}">
+              <div class='card card4'>
+                <div class='info'>
+                  <h1 class='title'>BLOGS</h1>
+                  <p class='description'>EXPERIENCIAS<br>CONOCIMIENTOS<br>FAMILIA<br>PERSAMIENTOS<br>SUEÑOS</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
 
 
         <div class="text-center" style="margin:30px; margin-block-end:0px">
@@ -106,12 +113,10 @@ INICIO
     $element = element.parentElement
     console.log($element);
     let parent = $element.querySelector(`div[id="parent"]`);
-    parent.style = 'height:350px; border-radius: 20px; filter: grayscale(0%);'
   }
   function CambiaNegro(element){
     $element = element.parentElement
     let parent = $element.querySelector(`div[id="parent"]`);
-    parent.style = 'height:350px; border-radius: 20px; filter: grayscale(100%);'
   }
 </script>
 {% endblock scripts %}

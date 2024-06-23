@@ -9,6 +9,7 @@ from home.views import *
 urlpatterns = [
     path('', index, name='index'),
     path('proyectos', proyectos, name='proyectos'),
+    path('podcast', podcast, name='podcast'),
     path('register', register, name='register'),
     path('proyecto_detail/<int:pk>', proyecto_detail, name='proyecto_detail'),
     path('contactos/', contactos, name='contactos'),
