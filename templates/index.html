@@ -12,7 +12,7 @@ INICIO
               {% for item in quien_soy %}
               <div class="col-lg-4 col-md-4 col-xs-12">
                 <div style="display: flex; justify-content: center; align-items: center;">
-                  <img  style="border-radius:50%;  filter: grayscale(100%); max-width: 300px;" class="parent" id="parent" src="{{item.img_perfil.url}}" alt="">
+                  <img  style="border-radius:50%; max-width: 300px;" class="parent" id="parent" src="{% static 'images/perfil.jpg' %}" alt="">
                 </div>
                 <div>
                   <p class="text-center" style="line-height:15px; margin:5px"> El éxito llega para todos aquellos que <br>estan ocupados buscándolo</p>

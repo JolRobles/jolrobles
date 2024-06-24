@@ -14,7 +14,7 @@ DETALLE PROYECTO
         <div class="row portfolio-container">
           <div class="col-lg-6 col-md-6 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2">
-              <img class="w-100 parent" id="parent"  src="{{proyecto.imagen.url}}" alt="" style="height:350px; border-radius: 20px;"/>
+              <iframe class="w-100 parent" id="parent"  src="{{proyecto.imagen}}" width="350" height="350" style="border-top-left-radius: 20px; border-top-right-radius: 20px;"></iframe>
               <div
                 class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
               >
@@ -60,34 +60,7 @@ DETALLE PROYECTO
     </div>
     <!-- Gallery End -->
         </section>
-        <div class="text-center pb-2">
-          <h1 class="mb-4">Otros Proyectos</h1>
-        </div>
-        <!-- ***** Menu Area Starts ***** -->
-        <section class="section" id="menu">
-            <div class="menu-item-carousel">
-                    <!-- <div class="owl-menu-item owl-carousel" style="width:1500px; margin-right:10px"> -->
-                    <div class="owl-menu-item owl-carousel" style="width: 2550px;">
-                      {% for proyect in proyectos %}
-                      <div class="item">
-                        <a href="{% url 'home:proyecto_detail' proyect.pk %}">
-                          <div class="position-relative overflow-hidden mb-2">
-                            <img class="w-100 parent" id="parent"  src="{{proyect.imagen.url}}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px;"/>
-                            <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                              <a href="{% url 'home:proyecto_detail' proyect.pk %}" class="text-white" style="font-size: 40px">{{proyect.nombre}}
-                                <p class="text-white">{{proyect.rol_realizado}}</p>
-                              </a>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      {% endfor %}
-                      </div>
-                    </div>
-            <div class="text-center" style="margin:30px">
-              <img src="{% static 'images/logo_blanco.png' %}">
-            </div>
-        </section>
+        
     {% endblock content %}
 {% block scripts %}
 {{block.super}}

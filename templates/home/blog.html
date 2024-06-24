@@ -14,20 +14,18 @@ DETALLE PROYECTO
           <h1 class="mb-4" style="font-weight: bolt;">{{blog_object.titulo}}</h1>
         </div>
         <div class="row portfolio-container">
-          <div class="col-lg-6 col-md-6 mb-4 portfolio-item first">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2" style="width: 690px; height: 440px; max-width: 100%;">
-              <img class="w-100 parent" id="parent"  src="{{blog_object.imagen.url}}" alt="" style="border-radius: 20px; max-width: 100%; height: auto;"/>
-              <div
-                class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
-              >
+              <iframe class="w-100 parent" id="parent"  src="{{blog_object.imagen}}" style="border-radius: 20px; max-width: 100%; height: 100%;"></iframe>
+              <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 mb-4 portfolio-item second" style="padding-right: 50px;">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4 portfolio-item second" style="padding-right: 50px;">
             <div class="position-relative overflow-hidden mb-2">
               <p align="right">{{blog_object.autor}} | {{blog_object.fecha}}</p>
               <br>
-              <div class="portfolio-btn d-flex justify-content-center" style="padding-right: 50px; white-space:  pre-wrap; word-wrap: break-word; line-height: 0.5;">
+              <div class="portfolio-btn d-flex justify-content-center" style=" white-space:  pre-wrap; word-wrap: break-word; line-height: 0.5;">
                 <div style="text-align:justify">
                   <p >{{blog_object.detalle_principal|linebreaks}}</p>
                 </div>
@@ -41,7 +39,7 @@ DETALLE PROYECTO
           </div>
           <div class="col-lg-12 col-md-12 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2">
-              <img class="w-100 parent" id="parent"  src="{{blog_object.imagen_2.url}}" alt="" style="height:350px; border-radius: 20px;"/>
+              <iframe class="w-100 parent" id="parent"  src="{{blog_object.imagen_2}}" style="height:350px; border-radius: 20px;"></iframe>
               <div
                 class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
               >
@@ -90,7 +88,7 @@ DETALLE PROYECTO
                       <div class="item">
                         <a href="{% url 'home:blog'  item.pk %}">
                           <div class="position-relative overflow-hidden" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                            <img class="w-100 parent" id="parent"  src="{{item.imagen.url}}" alt="" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px; filter: grayscale(100%);"/>
+                            <iframe class="w-100 parent" id="parent"  src="{{item.imagen}}" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px;"></iframe>
                             <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
                               <p class="text-white" style="font-size: 40px; padding-top: 10px; padding-bottom: 10px;">{{item.titulo}}
                               </p>

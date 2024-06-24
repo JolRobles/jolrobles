@@ -5,10 +5,10 @@ import datetime
 # Create your models here.
 # Create your models here.
 class Blog(models.Model):
-    imagen_portada = models.ImageField(upload_to='', null = True, blank = True)
+    imagen_portada = models.TextField(null = True, blank = True)
     titulo = models.CharField(max_length=200)
-    imagen = models.ImageField(upload_to='', null = True, blank = True)
-    imagen_2 = models.ImageField(upload_to='', null = True, blank = True)
+    imagen = models.TextField(null = True, blank = True)
+    imagen_2 = models.TextField(null = True, blank = True)
     detalle_principal = models.TextField(null=True, blank=True)
     detalle = models.TextField(null=True, blank=True)
     fecha = models.DateField(default=now)
@@ -28,7 +28,7 @@ class Proyecto(models.Model):
         ('F','Fotografía'),
     ]
     nombre = models.CharField(max_length=200)
-    imagen = models.ImageField(upload_to='', null = True, blank = True)
+    imagen = models.TextField(null=True, blank=True)
     rol_realizado = models.CharField(max_length=200, null=True, blank=True)
     descripcion = models.TextField(null=True, blank=True)
     link = models.URLField(null=True, blank=True)
