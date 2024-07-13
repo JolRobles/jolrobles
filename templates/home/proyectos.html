@@ -38,9 +38,9 @@ PROYECTOS
             {% endif %}
               <a href="{% url 'home:proyecto_detail' proyecto.pk %}" >
                 <div class="position-relative overflow-hidden mb-2">
-                  <iframe class="w-100 parent" id="parent"  src="{{proyecto.imagen}}" width="300" height="300" style="border-top-left-radius: 20px; border-top-right-radius: 20px;"></iframe>
-                  <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center text-center" style="margin-top: -10px;">
-                    <h5 class="text-white" style="font-size: 40px">{{proyecto.nombre}}  
+                  <img src="{{proyecto.imagen}}" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
+                  <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center text-center" style="margin-top: 0px;">
+                    <h5 class="text-white" style="font-size: 50px">{{proyecto.nombre}}  
                     <p class="text-white">{{proyecto.rol_realizado}}</p>
                     </h5>
                   </div>

@@ -14,14 +14,14 @@ DETALLE PROYECTO
           <h1 class="mb-4" style="font-weight: bolt;">{{blog_object.titulo}}</h1>
         </div>
         <div class="row portfolio-container">
-          <div class="col-lg-6 col-md-6 col-sm-12 mb-4 portfolio-item first">
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2" style="width: 690px; height: 440px; max-width: 100%;">
-              <iframe class="w-100 parent" id="parent"  src="{{blog_object.imagen}}" style="border-radius: 20px; max-width: 100%; height: 100%;"></iframe>
+              <img style="border-radius: 20px; max-width: 100%; height: 100%;" src="{{blog_object.imagen}}" alt="">
               <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 mb-4 portfolio-item second" style="padding-right: 50px;">
+          <div class="col-lg-8 col-md-8 col-sm-12 mb-4 portfolio-item second" style="padding-right: 50px;">
             <div class="position-relative overflow-hidden mb-2">
               <p align="right">{{blog_object.autor}} | {{blog_object.fecha}}</p>
               <br>
@@ -39,7 +39,7 @@ DETALLE PROYECTO
           </div>
           <div class="col-lg-12 col-md-12 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2">
-              <iframe class="w-100 parent" id="parent"  src="{{blog_object.imagen_2}}" style="height:350px; border-radius: 20px;"></iframe>
+              <img src="{{blog_object.imagen_2}}" style="border-radius: 20px;" alt="">
               <div
                 class="portfolio-btn bg-dark d-flex align-items-center justify-content-center"
               >
@@ -88,7 +88,7 @@ DETALLE PROYECTO
                       <div class="item">
                         <a href="{% url 'home:blog'  item.pk %}">
                           <div class="position-relative overflow-hidden" onmouseout="CambiaNegro(this)"  onmouseover="CambiaColor(this)">
-                            <iframe class="w-100 parent" id="parent"  src="{{item.imagen}}" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px;"></iframe>
+                            <img src="{{item.imagen_portada}}" style="height:350px; border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
                             <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
                               <p class="text-white" style="font-size: 40px; padding-top: 10px; padding-bottom: 10px;">{{item.titulo}}
                               </p>
