@@ -12,7 +12,7 @@ BLOG
           </div>
           <div class="row">
           {% for blog in blogs %}
-          <div class="col-md-4" >
+          <div class="col-md-4" style="padding-top: 15px;" >
             <a href="{% url 'home:blog' blog.pk %}">
               <div class="position-relative">
                 <img src="{{blog.imagen_portada}}" style="border-top-left-radius: 20px; border-top-right-radius: 20px; max-width:300; max-height:300" alt="">
